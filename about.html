@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/styles.css" />
+        <!-- Include the Typed.js library -->
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+        <title>निश्चल | About Me</title>
+    </head>
+    <body>
+        <nav>
+            <div class="nav__content">
+                <div class="logo" onclick="navigateToIndex()"><a href="#">निश्चल</a></div>
+                <label for="check" class="checkbox">
+                    <i class="ri-menu-line"></i>
+                </label>
+                <input type="checkbox" name="check" id="check" />
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blogs</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <section class="section section-entrance">
+            <div class="section__container">
+                <div class="content" id="mystory">
+                    <h1 class="title">
+                        <span id="typed-title"></span>
+                    </h1>
+                    <p class="description" id="typed-paragraph">
+                    <!-- The Typed.js effect will be applied here -->
+                    </p>
+                </div>
+                <div class="image image-entrance">
+                    <img src="/assets/profile.jpg" alt="profile" />
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="icons">
+                <a href="#" class="social-icon"><i class="ri-facebook-fill"></i></a>
+                <a href="#" class="social-icon"><i class="ri-linkedin-fill"></i></a>
+                <a href="#" class="social-icon"><i class="ri-instagram-fill"></i></a>
+                <a href="#" class="social-icon"><i class="ri-twitter-fill"></i></a>
+            </div>
+            <p class="company-name">
+            Nischal &copy; 2022, All Rights Reserved
+            </p>
+        </footer>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                            // Get the title element
+                            var titleElement = document.getElementById('typed-title');
+                            // Get the paragraph element
+                            var paragraphElement = document.getElementById('typed-paragraph');
+                            // Set the static text
+                            var staticText = "My story";
+                            // Set the paragraph text
+                            var paragraphText = "In my early days, fueled by an insatiable curiosity, I was captivated by the magic of video games. What started as a quest to unravel the secrets behind game mechanics soon evolved into a deep fascination with the world of hacking. I yearned to understand the intricacies of the digital realm, driven by a desire to transcend the ordinary. Late-night coding sessions became my sanctuary, as I explored the realms of ones and zeros. From a wide-eyed gamer to an aspiring hacker, my journey was a clandestine odyssey through the labyrinth of technology, paving the way for the skills that define me today.";
+
+                            // Initialize the title and paragraph with typewriter effects
+                            typeStaticText(titleElement, staticText);
+                            typewriterEffect(paragraphElement, paragraphText);
+
+                            // Function to type static text
+                            function typeStaticText(element, text) {
+                                            element.innerHTML = text;
+                                        }
+
+                            // Function to create typewriter effect
+                            function typewriterEffect(element, text) {
+                                            var speed = 25; // Set the typing speed in milliseconds (adjust as needed)
+                                            var i = 0;
+
+                                            function type() {
+                                                            if (i < text.length) {
+                                                                            // Create a span element for bold text
+                                                                            var span = document.createElement('span');
+                                                                            span.style.fontWeight = 'bold';
+                                                                            span.innerHTML = text.charAt(i);
+                                                                            element.appendChild(span);
+
+                                                                            i++;
+                                                                            setTimeout(type, speed);
+                                                                        }
+                                                        }
+
+                                            type();
+                                        }
+                        });
+            function navigateToIndex() {
+                            window.location.href = 'index.html';
+
+                        }
+        </script>
+    </body>
+</html>
+
